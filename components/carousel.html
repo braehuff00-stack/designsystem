@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t='light';try{if(localStorage.getItem('theme')==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-bs-theme',t)})();</script>
+  <title>Carousel | Braeden Huff Design System</title>
+  <meta name="description" content="The carousel component with its arrow group: live demo, CSS specifications and accessibility guidelines.">
+
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="../images/logo/favicons/48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo/favicons/180.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <nav class="navbar navbar-expand-lg sticky-top site-nav" aria-label="Design system">
+    <div class="container-fluid ds-container">
+      <a class="brand" href="../index.html">
+        <img class="logo-light" src="../images/logo/colorlightmode.svg" alt="" width="76" height="64">
+        <img class="logo-dark" src="../images/logo/colordarkmode.svg" alt="" width="76" height="64">
+        <span class="brand-text"><span class="brand-name">Braeden Huff</span><span class="brand-tag">Design System</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <button type="button" class="nav-link dropdown-toggle" id="foundationsMenu" data-bs-toggle="dropdown" aria-expanded="false">Foundations</button>
+            <ul class="dropdown-menu" aria-labelledby="foundationsMenu">
+              <li><a class="dropdown-item" href="../foundations/colors.html">Color Palette</a></li>
+              <li><a class="dropdown-item" href="../foundations/typography.html">Typography</a></li>
+              <li><a class="dropdown-item" href="../foundations/logo.html">Logo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <button type="button" class="nav-link dropdown-toggle active" id="componentsMenu" data-bs-toggle="dropdown" aria-expanded="false">Components</button>
+            <ul class="dropdown-menu" aria-labelledby="componentsMenu">
+              <li><a class="dropdown-item" href="navbar.html">Navbar</a></li>
+              <li><a class="dropdown-item" href="buttons.html">Buttons</a></li>
+              <li><a class="dropdown-item active" aria-current="page" href="carousel.html">Carousel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../patterns/case-study.html">Page Pattern</a></li>
+        </ul>
+        <div class="theme-toggle-wrap">
+          <button type="button" class="theme-toggle" role="switch" aria-checked="false" aria-label="Dark mode">
+            <span class="d-lg-none">Dark mode</span>
+            <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"><i class="bi bi-sun-fill"></i><i class="bi bi-moon-stars-fill"></i></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container-fluid ds-container flex-grow-1 main-content">
+    <header class="page-header">
+      <span class="eyebrow">Components</span>
+      <h1>Carousel</h1>
+      <p class="lead">Shows a project&rsquo;s mockups one at a time in a 3:2 frame, with a small Berry arrow group centered underneath. It never moves on its own; visitors step through the slides with the arrows, a swipe, or the arrow keys.</p>
+    </header>
+
+    <!-- Live demo -->
+    <section class="page-section" aria-labelledby="demo-title">
+      <h2 id="demo-title">Live Demo</h2>
+      <p>Previous is disabled on the first slide and Next on the last, so the arrows always show where you are.</p>
+
+      <div class="demo">
+        <div class="ds-carousel mx-auto" style="max-width:616px">
+          <div id="demoCarousel" class="carousel slide" data-bs-interval="false" data-bs-wrap="false" role="region" aria-roledescription="carousel" aria-label="Mosaic project mockups">
+            <div class="carousel-inner" id="demoCarouselSlides">
+              <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <img src="../images/figma/carousel-mosaic.jpg" width="2400" height="1600" alt="Three phones showing the Mosaic app on a pink background: a home feed, the onboarding screen reading “Track books, movies, TV shows, games and music,” and a sci-fi shelf">
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <img src="../images/carousel/mosaic-hand-pink.jpg" width="1800" height="1200" alt="A hand holding a phone against a pink background, showing the Mosaic welcome screen: “Track books, movies, TV shows, games and music”" loading="lazy">
+              </div>
+              <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <img src="../images/carousel/mosaic-hand-gradient.jpg" width="1200" height="800" alt="The same Mosaic welcome screen on a hand-held phone, against a soft pink-to-peach gradient" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="arrow-group">
+            <button class="arrow-btn" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev" aria-controls="demoCarouselSlides">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i><span class="visually-hidden">Previous slide</span>
+            </button>
+            <button class="arrow-btn" type="button" data-bs-target="#demoCarousel" data-bs-slide="next" aria-controls="demoCarouselSlides">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i><span class="visually-hidden">Next slide</span>
+            </button>
+          </div>
+          <p class="carousel-status visually-hidden" aria-live="polite" aria-atomic="true"></p>
+        </div>
+      </div>
+
+      <h3 class="h4 mt-4 mb-3">Arrow Group States</h3>
+      <div class="demo d-flex flex-wrap gap-5">
+        <div><div class="arrow-group" aria-hidden="true"><span class="arrow-btn"><i class="bi bi-chevron-left"></i></span><span class="arrow-btn"><i class="bi bi-chevron-right"></i></span></div><span class="demo-label">Default</span></div>
+        <div><div class="arrow-group" aria-hidden="true"><span class="arrow-btn is-hover"><i class="bi bi-chevron-left"></i></span><span class="arrow-btn is-hover"><i class="bi bi-chevron-right"></i></span></div><span class="demo-label">Hover</span></div>
+        <div><div class="arrow-group" aria-hidden="true"><span class="arrow-btn is-disabled"><i class="bi bi-chevron-left"></i></span><span class="arrow-btn is-disabled"><i class="bi bi-chevron-right"></i></span></div><span class="demo-label">Disabled</span></div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="page-section" aria-labelledby="specs-title">
+      <h2 id="specs-title">CSS Specifications</h2>
+      <div class="table-wrap mb-4">
+        <table class="table spec-table">
+          <caption class="visually-hidden">Carousel CSS properties, values and tokens</caption>
+          <thead><tr><th scope="col">Element</th><th scope="col">Property</th><th scope="col">Value</th><th scope="col">Token</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" rowspan="3">Wrapper</th><td><code>display / flex-direction</code></td><td>flex / column, items centered</td><td>&mdash;</td></tr>
+            <tr><td><code>gap</code></td><td>8px (image to arrows)</td><td>&mdash;</td></tr>
+            <tr><td><code>max-width</code></td><td>616px on the page pattern, centered</td><td>&mdash;</td></tr>
+
+            <tr><th scope="row" rowspan="3">Slide image</th><td><code>aspect-ratio</code></td><td>600 / 400 (3:2)</td><td>&mdash;</td></tr>
+            <tr><td><code>object-fit</code></td><td>cover</td><td>&mdash;</td></tr>
+            <tr><td><code>border-radius</code></td><td>8px</td><td>&mdash;</td></tr>
+
+            <tr><th scope="row" rowspan="2">Arrow group</th><td><code>display / gap</code></td><td>flex / 4px</td><td>&mdash;</td></tr>
+            <tr><td>Size</td><td>64 &times; 30px</td><td>&mdash;</td></tr>
+
+            <tr><th scope="row" rowspan="6">Arrow button</th><td><code>width &times; height</code></td><td>30 &times; 30px (44px tap area via <code>::after</code>)</td><td>&mdash;</td></tr>
+            <tr><td><code>border-radius</code></td><td>8px</td><td>&mdash;</td></tr>
+            <tr><td><code>background-color</code></td><td><span class="swatch-inline" style="background:#8A3F64"></span>#8A3F64 &middot; dark #E39BBE</td><td>Primary Button Background</td></tr>
+            <tr><td><code>background-color:hover</code></td><td><span class="swatch-inline" style="background:#6F3150"></span>#6F3150 &middot; dark #F2BCD6</td><td>Primary Button Hover Background</td></tr>
+            <tr><td><code>background-color:disabled</code></td><td><span class="swatch-inline" style="background:#CCCCCC"></span>#CCCCCC &middot; dark #2F3630</td><td>Disabled Button Background</td></tr>
+            <tr><td>Chevron</td><td>Bootstrap Icons <code>chevron-left/right</code>, 14px</td><td>Color/Text/Button Text</td></tr>
+
+            <tr><th scope="row" rowspan="2">Behavior</th><td><code>data-bs-interval</code></td><td><code>false</code> (no autoplay)</td><td>&mdash;</td></tr>
+            <tr><td><code>data-bs-wrap</code></td><td><code>false</code> (stops at the ends)</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<pre class="code-sample"><code>&lt;div class="ds-carousel"&gt;
+  &lt;div id="projectCarousel" class="carousel slide" data-bs-interval="false" data-bs-wrap="false"
+       role="region" aria-roledescription="carousel" aria-label="Project mockups"&gt;
+    &lt;div class="carousel-inner" id="projectSlides"&gt;
+      &lt;div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 3"&gt;
+        &lt;img src="mockup-1.jpg" alt="Describe what the slide shows"&gt;
+      &lt;/div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="arrow-group"&gt;
+    &lt;button class="arrow-btn" type="button" data-bs-target="#projectCarousel"
+            data-bs-slide="prev" aria-controls="projectSlides"&gt;
+      &lt;i class="bi bi-chevron-left" aria-hidden="true"&gt;&lt;/i&gt;
+      &lt;span class="visually-hidden"&gt;Previous slide&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="arrow-btn" ... data-bs-slide="next"&gt;...Next slide...&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p class="carousel-status visually-hidden" aria-live="polite"&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;script src="js/carousel.js"&gt;&lt;/script&gt;   &lt;!-- disables arrows at the ends, announces "Slide n of N" --&gt;
+
+.ds-carousel          { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.ds-carousel img      { width: 100%; aspect-ratio: 600 / 400; object-fit: cover; border-radius: 8px; }
+.arrow-group          { display: flex; gap: 4px; }
+.arrow-btn            { width: 30px; height: 30px; border: 0; border-radius: 8px;
+                        background: var(--color-btn-primary-bg); color: var(--color-text-button); }
+.arrow-btn:hover      { background: var(--color-btn-primary-hover-bg); }
+.arrow-btn:disabled   { background: var(--color-btn-disabled-bg); }</code></pre>
+    </section>
+
+    <!-- Accessibility -->
+    <section class="page-section" aria-labelledby="a11y-title">
+      <h2 id="a11y-title">Accessibility Guidelines</h2>
+      <ul class="a11y-list">
+        <li><span class="wcag">2.2.2</span>No autoplay. Slides only change when the visitor asks, so nothing moves while someone is reading, and there is no motion to pause.</li>
+        <li><span class="wcag">1.3.1</span>Label the carousel as a region with <code>aria-roledescription="carousel"</code> and an <code>aria-label</code> naming its content. Each slide is a group labelled &ldquo;1 of 3,&rdquo; &ldquo;2 of 3&rdquo; and so on (WAI-ARIA carousel pattern).</li>
+        <li><span class="wcag">4.1.2</span>The arrows are real <code>&lt;button&gt;</code>s with hidden text (&ldquo;Previous slide,&rdquo; &ldquo;Next slide&rdquo;) and <code>aria-controls</code> pointing at the slides. The chevron icons are <code>aria-hidden</code>.</li>
+        <li><span class="wcag">4.1.3</span>A polite live region announces &ldquo;Slide 2 of 3&rdquo; after each move, so screen reader users know the change worked.</li>
+        <li><span class="wcag">1.1.1</span>Every slide image needs alt text that says what the image shows, not just &ldquo;mockup.&rdquo; For a chart or table, sum up its main finding.</li>
+        <li><span class="wcag">2.5.8</span>The arrow buttons are drawn at 30px but each has a 44px invisible tap area, and they are 4px apart, above the 24px minimum target size.</li>
+        <li><span class="wcag">1.4.11</span>The arrow buttons contrast with the page (Berry is 6.4:1 on Warm Linen) and the chevrons with their button (6.4:1).</li>
+        <li><span class="wcag">2.1.1</span>Everything works from the keyboard: Tab to the arrows and press Enter or Space. When an arrow becomes disabled at the end, focus moves to the other arrow instead of being lost.</li>
+        <li><span class="wcag">2.3.3</span>With reduced motion turned on, slides switch instantly instead of sliding.</li>
+        <li><span class="wcag">1.3.2</span>Don&rsquo;t put essential information only in a carousel. Slides after the first are easy to miss, so repeat key points in the page text.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Copyright &copy; Braeden Huff | 2026</p>
+    <p>Design System Site created with Claude</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/carousel.js"></script>
+</body>
+</html>

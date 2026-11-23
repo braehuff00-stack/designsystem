@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t='light';try{if(localStorage.getItem('theme')==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-bs-theme',t)})();</script>
+  <title>Buttons | Braeden Huff Design System</title>
+  <meta name="description" content="Primary and secondary buttons: live states, CSS specifications and accessibility guidelines.">
+
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="../images/logo/favicons/48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo/favicons/180.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <style>
+    .state-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.5rem; }
+    .state-grid > div { display: flex; flex-direction: column; align-items: flex-start; }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <nav class="navbar navbar-expand-lg sticky-top site-nav" aria-label="Design system">
+    <div class="container-fluid ds-container">
+      <a class="brand" href="../index.html">
+        <img class="logo-light" src="../images/logo/colorlightmode.svg" alt="" width="76" height="64">
+        <img class="logo-dark" src="../images/logo/colordarkmode.svg" alt="" width="76" height="64">
+        <span class="brand-text"><span class="brand-name">Braeden Huff</span><span class="brand-tag">Design System</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <button type="button" class="nav-link dropdown-toggle" id="foundationsMenu" data-bs-toggle="dropdown" aria-expanded="false">Foundations</button>
+            <ul class="dropdown-menu" aria-labelledby="foundationsMenu">
+              <li><a class="dropdown-item" href="../foundations/colors.html">Color Palette</a></li>
+              <li><a class="dropdown-item" href="../foundations/typography.html">Typography</a></li>
+              <li><a class="dropdown-item" href="../foundations/logo.html">Logo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <button type="button" class="nav-link dropdown-toggle active" id="componentsMenu" data-bs-toggle="dropdown" aria-expanded="false">Components</button>
+            <ul class="dropdown-menu" aria-labelledby="componentsMenu">
+              <li><a class="dropdown-item" href="navbar.html">Navbar</a></li>
+              <li><a class="dropdown-item active" aria-current="page" href="buttons.html">Buttons</a></li>
+              <li><a class="dropdown-item" href="carousel.html">Carousel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../patterns/case-study.html">Page Pattern</a></li>
+        </ul>
+        <div class="theme-toggle-wrap">
+          <button type="button" class="theme-toggle" role="switch" aria-checked="false" aria-label="Dark mode">
+            <span class="d-lg-none">Dark mode</span>
+            <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"><i class="bi bi-sun-fill"></i><i class="bi bi-moon-stars-fill"></i></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container-fluid ds-container flex-grow-1 main-content">
+    <header class="page-header">
+      <span class="eyebrow">Components</span>
+      <h1>Buttons</h1>
+      <p class="lead">Two button styles. <strong>Primary</strong> (filled Berry) is for the main action in a section, like &ldquo;View Final Prototype.&rdquo; <strong>Secondary</strong> (Moss outline) is for supporting actions, like &ldquo;Back to Projects.&rdquo; Use no more than one primary button per section.</p>
+    </header>
+
+    <!-- Live demo -->
+    <section class="page-section" aria-labelledby="demo-title">
+      <h2 id="demo-title">Live Demo</h2>
+      <p>The first button in each row is live: hover it, or tab to it to see the focus ring. The others are fixed in the hover and disabled states from Figma. Switch to Dark Mode in the navbar to see the dark variants.</p>
+
+      <div class="demo mb-4">
+        <h3 class="h4 mb-3">Primary</h3>
+        <div class="state-grid">
+          <div><button type="button" class="btn-ds btn-ds-primary">Button</button><span class="demo-label">Primary Default (live)</span></div>
+          <div><span class="btn-ds btn-ds-primary is-hover" aria-hidden="true">Button</span><span class="demo-label">Primary Hover</span></div>
+          <div><button type="button" class="btn-ds btn-ds-primary" disabled>Button</button><span class="demo-label">Primary Disabled</span></div>
+          <div><button type="button" class="btn-ds btn-ds-primary">View Final Prototype <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></button><span class="demo-label">Primary with icon</span></div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <h3 class="h4 mb-3">Secondary</h3>
+        <div class="state-grid">
+          <div><button type="button" class="btn-ds btn-ds-secondary">Button</button><span class="demo-label">Secondary Default (live)</span></div>
+          <div><span class="btn-ds btn-ds-secondary is-hover" aria-hidden="true">Button</span><span class="demo-label">Secondary Hover</span></div>
+          <div><button type="button" class="btn-ds btn-ds-secondary" disabled>Button</button><span class="demo-label">Secondary Disabled</span></div>
+          <div><button type="button" class="btn-ds btn-ds-secondary">Back to Projects</button><span class="demo-label">Secondary with label</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="page-section" aria-labelledby="specs-title">
+      <h2 id="specs-title">CSS Specifications</h2>
+
+      <h3 class="h4 mb-3">Shared</h3>
+      <div class="table-wrap mb-4">
+        <table class="table spec-table">
+          <caption class="visually-hidden">CSS shared by both button styles</caption>
+          <thead><tr><th scope="col">Property</th><th scope="col">Value</th><th scope="col">Token</th></tr></thead>
+          <tbody>
+            <tr><td><code>display</code></td><td>inline-flex; align-items: center; justify-content: center</td><td>&mdash;</td></tr>
+            <tr><td><code>padding</code></td><td>15px 25px</td><td>&mdash;</td></tr>
+            <tr><td><code>gap</code></td><td>10px (label to icon)</td><td>&mdash;</td></tr>
+            <tr><td><code>border-radius</code></td><td>10px</td><td>&mdash;</td></tr>
+            <tr><td><code>font-family</code></td><td>"Figtree", sans-serif</td><td>Button</td></tr>
+            <tr><td><code>font-size / line-height</code></td><td>18px / 29px</td><td>Button</td></tr>
+            <tr><td><code>font-weight</code></td><td>600</td><td>Button</td></tr>
+            <tr><td>Icon</td><td>20 &times; 20px, after the label (Bootstrap Icons <code>box-arrow-up-right</code>)</td><td>&mdash;</td></tr>
+            <tr><td>Height</td><td>59px primary &middot; 63px secondary (adds a 2px border)</td><td>&mdash;</td></tr>
+            <tr><td><code>transition</code></td><td>background-color, border-color, color 0.2s ease (off with reduced motion)</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="h4 mb-3">States</h3>
+      <h4 class="h4 mb-2" style="font-size:var(--fs-body);line-height:29px">Light Mode</h4>
+      <div class="table-wrap mb-4">
+        <table class="table spec-table">
+          <caption class="visually-hidden">Light Mode colors for each button state</caption>
+          <thead><tr><th scope="col">State</th><th scope="col">Background</th><th scope="col">Border</th><th scope="col">Text</th><th scope="col">Background Token</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Primary Default</th><td><span class="swatch-inline" style="background:#8A3F64"></span>#8A3F64</td><td>none</td><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>Primary Button Background</td></tr>
+            <tr><th scope="row">Primary Hover</th><td><span class="swatch-inline" style="background:#6F3150"></span>#6F3150</td><td>none</td><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>Primary Button Hover Background</td></tr>
+            <tr><th scope="row">Primary Disabled</th><td><span class="swatch-inline" style="background:#CCCCCC"></span>#CCCCCC</td><td>none</td><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>Disabled Button Background</td></tr>
+            <tr><th scope="row">Secondary Default</th><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>2px #4F6E40</td><td><span class="swatch-inline" style="background:#4F6E40"></span>#4F6E40</td><td>Secondary Button Background</td></tr>
+            <tr><th scope="row">Secondary Hover</th><td><span class="swatch-inline" style="background:#4F6E40"></span>#4F6E40</td><td>2px #4F6E40</td><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>Secondary Button Hover Background</td></tr>
+            <tr><th scope="row">Secondary Disabled</th><td><span class="swatch-inline" style="background:#F6F3EA"></span>#F6F3EA</td><td>2px #CCCCCC</td><td><span class="swatch-inline" style="background:#CCCCCC"></span>#CCCCCC</td><td>Secondary Button Background</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="h4 mb-2" style="font-size:var(--fs-body);line-height:29px">Dark Mode</h4>
+      <div class="table-wrap mb-3">
+        <table class="table spec-table">
+          <caption class="visually-hidden">Dark Mode colors for each button state</caption>
+          <thead><tr><th scope="col">State</th><th scope="col">Background</th><th scope="col">Border</th><th scope="col">Text</th><th scope="col">Background Token</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Primary Default</th><td><span class="swatch-inline" style="background:#E39BBE"></span>#E39BBE</td><td>none</td><td><span class="swatch-inline" style="background:#131813"></span>#131813</td><td>Primary Button Background</td></tr>
+            <tr><th scope="row">Primary Hover</th><td><span class="swatch-inline" style="background:#F2BCD6"></span>#F2BCD6</td><td>none</td><td><span class="swatch-inline" style="background:#131813"></span>#131813</td><td>Primary Button Hover Background</td></tr>
+            <tr><th scope="row">Primary Disabled</th><td><span class="swatch-inline" style="background:#2F3630"></span>#2F3630</td><td>none</td><td><span class="swatch-inline" style="background:#7C857D"></span>#7C857D</td><td>Disabled Button Background</td></tr>
+            <tr><th scope="row">Secondary Default</th><td><span class="swatch-inline" style="background:#131813"></span>#131813</td><td>2px #9CC08A</td><td><span class="swatch-inline" style="background:#9CC08A"></span>#9CC08A</td><td>Secondary Button Background</td></tr>
+            <tr><th scope="row">Secondary Hover</th><td><span class="swatch-inline" style="background:#9CC08A"></span>#9CC08A</td><td>2px #9CC08A</td><td><span class="swatch-inline" style="background:#131813"></span>#131813</td><td>Secondary Button Hover Background</td></tr>
+            <tr><th scope="row">Secondary Disabled</th><td><span class="swatch-inline" style="background:#131813"></span>#131813</td><td>2px #2F3630</td><td><span class="swatch-inline" style="background:#2F3630"></span>#2F3630</td><td>Secondary Button Background</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-small mb-4"><strong>Focus (all states):</strong> <code>box-shadow: 0 0 0 3px page, 0 0 0 6px Color/Text/Link</code> (Berry ring in Light Mode, Wild Rose in Dark Mode).</p>
+
+<pre class="code-sample"><code>&lt;!-- Action on this page: a &lt;button&gt; --&gt;
+&lt;button type="button" class="btn-ds btn-ds-primary"&gt;Button&lt;/button&gt;
+&lt;button type="button" class="btn-ds btn-ds-secondary" disabled&gt;Button&lt;/button&gt;
+
+&lt;!-- Goes somewhere: an &lt;a&gt; styled as a button --&gt;
+&lt;a class="btn-ds btn-ds-primary" href="https://..." target="_blank" rel="noopener"&gt;
+  View Final Prototype
+  &lt;i class="bi bi-box-arrow-up-right" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span class="visually-hidden"&gt;(opens in a new tab)&lt;/span&gt;
+&lt;/a&gt;
+
+.btn-ds {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 25px; border-radius: 10px;
+  font: 600 18px/29px "Figtree", sans-serif;
+}
+.btn-ds-primary         { background: var(--color-btn-primary-bg); border: 0; color: var(--color-text-button); }
+.btn-ds-primary:hover   { background: var(--color-btn-primary-hover-bg); }
+.btn-ds-secondary       { background: var(--color-btn-secondary-bg);
+                          border: 2px solid var(--color-btn-secondary-border);
+                          color: var(--color-btn-secondary-border); }
+.btn-ds-secondary:hover { background: var(--color-btn-secondary-hover-bg); color: var(--color-text-button); }
+.btn-ds:disabled        { background: var(--color-btn-disabled-bg); pointer-events: none; }</code></pre>
+    </section>
+
+    <!-- Accessibility -->
+    <section class="page-section" aria-labelledby="a11y-title">
+      <h2 id="a11y-title">Accessibility Guidelines</h2>
+      <ul class="a11y-list">
+        <li><span class="wcag">4.1.2</span>Use <code>&lt;button&gt;</code> for actions on the page and <code>&lt;a href&gt;</code> for anything that goes to another page. Both get the same <code>.btn-ds</code> look, but assistive technology announces them differently.</li>
+        <li><span class="wcag">2.4.4</span>Write labels that say what happens (&ldquo;View Final Prototype,&rdquo; &ldquo;Back to Projects&rdquo;), not &ldquo;Click here.&rdquo; When several buttons share a label, such as &ldquo;Download SVG,&rdquo; add an <code>aria-label</code> that names the item.</li>
+        <li><span class="wcag">1.4.3</span>Label contrast meets AA in every enabled state: 6.4:1 on Berry, 8.5:1 on Berry Dark and 5.2:1 for Moss on Warm Linen. In Dark Mode the label switches to Forest Night (8.3:1 on Wild Rose), because Warm Linen there would be only 2.0:1.</li>
+        <li><span class="wcag">1.4.11</span>The secondary border (Moss, 5.2:1 against the page) meets the 3:1 minimum for interface parts.</li>
+        <li><span class="wcag">2.4.7</span>Every button shows a visible focus ring for keyboard users. Never remove it with <code>outline: none</code> unless it is replaced.</li>
+        <li><span class="wcag">4.1.2</span>Disable a <code>&lt;button&gt;</code> with the <code>disabled</code> attribute so it is skipped by the keyboard and announced as unavailable. For a link styled as a button, use <code>aria-disabled="true"</code> and <code>tabindex="-1"</code>. Disabled controls are exempt from contrast rules, but explain nearby why an action is unavailable.</li>
+        <li><span class="wcag">2.5.8</span>Buttons are at least 59px tall, well over the 24px minimum target size, and keep 8px or more between neighbors.</li>
+        <li><span class="wcag">3.2.5</span>When a button opens a new tab, say so: add a visually hidden &ldquo;(opens in a new tab)&rdquo; and mark the external-link icon <code>aria-hidden="true"</code>.</li>
+        <li><span class="wcag">2.3.3</span>The color transition and press nudge are turned off when the visitor has asked for reduced motion.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Copyright &copy; Braeden Huff | 2026</p>
+    <p>Design System Site created with Claude</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/theme.js"></script>
+</body>
+</html>
