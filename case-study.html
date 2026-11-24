@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t='light';try{if(localStorage.getItem('theme')==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-bs-theme',t)})();</script>
+  <title>Project Title | Braeden Huff</title>
+  <meta name="description" content="Case study page pattern from Braeden Huff's design system: a live build of the Figma layout.">
+
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="../images/logo/favicons/48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo/favicons/180.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <style>
+    /* The pattern's navbar is the plain Figma version: no bottom rule */
+    .cs-nav { border-bottom: 0; }
+
+    /* Switch label names the mode it switches to: "Dark Mode" in light, "Light Mode" in dark */
+    .label-light-mode,
+    [data-bs-theme="dark"] .label-dark-mode { display: none; }
+    [data-bs-theme="dark"] .label-light-mode { display: inline; }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <!-- Pattern banner: only here so the preview links back to the design system -->
+  <div class="pattern-banner">
+    <div class="container-fluid cs-container pattern-banner-inner">
+      <div class="pattern-banner-lead">
+        <a class="pattern-back" href="../index.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to the Design System</a>
+        <span class="pattern-label">You&rsquo;re viewing the <strong>Page Pattern</strong> preview</span>
+      </div>
+      <button type="button" class="theme-toggle py-0" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="label-dark-mode">Dark Mode</span><span class="label-light-mode">Light Mode</span>
+        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb"><i class="bi bi-sun-fill"></i><i class="bi bi-moon-stars-fill"></i></span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navbar (Figma: Navbar, Property 1=Projects Active) -->
+  <nav class="navbar navbar-expand-lg sticky-top site-nav cs-nav" aria-label="Main">
+    <div class="container-fluid cs-container">
+      <a class="brand" href="../index.html">
+        <img class="logo-light" src="../images/logo/colorlightmode.svg" alt="" width="76" height="64">
+        <img class="logo-dark" src="../images/logo/colordarkmode.svg" alt="" width="76" height="64">
+        <span class="brand-text"><span class="brand-name">Braeden Huff</span><span class="brand-tag">UX Design &amp; Research</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#main">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#main">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#main">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container-fluid cs-container flex-grow-1">
+
+    <!-- Hero -->
+    <section class="cs-section" aria-labelledby="project-title">
+      <span class="eyebrow mb-4">Case Study</span>
+      <div class="text-block mb-4">
+        <h1 id="project-title">Project Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+
+      <div class="ds-carousel cs-carousel mb-4">
+        <div id="projectCarousel" class="carousel slide" data-bs-interval="false" data-bs-wrap="false" role="region" aria-roledescription="carousel" aria-label="Project mockups">
+          <div class="carousel-inner" id="projectSlides">
+            <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <img src="../images/figma/carousel-mosaic.jpg" width="2400" height="1600" alt="Three phones showing the Mosaic app on a pink background: a home feed, the onboarding screen and a sci-fi shelf">
+            </div>
+            <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <img src="../images/carousel/mosaic-hand-pink.jpg" width="1800" height="1200" alt="A hand holding a phone against a pink background, showing the Mosaic welcome screen" loading="lazy">
+            </div>
+            <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <img src="../images/carousel/mosaic-hand-gradient.jpg" width="1200" height="800" alt="The Mosaic welcome screen on a hand-held phone, against a pink-to-peach gradient" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="arrow-group">
+          <button class="arrow-btn" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev" aria-controls="projectSlides">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i><span class="visually-hidden">Previous slide</span>
+          </button>
+          <button class="arrow-btn" type="button" data-bs-target="#projectCarousel" data-bs-slide="next" aria-controls="projectSlides">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i><span class="visually-hidden">Next slide</span>
+          </button>
+        </div>
+        <p class="carousel-status visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-4 text-block">
+          <h2 class="h4">Problem</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+        <div class="col-md-4 text-block">
+          <h2 class="h4">Solution</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+        <div class="col-md-4 text-block">
+          <h2 class="h4">Outcome</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h3 class="cs-meta-title" style="font-family:var(--font-body);font-size:var(--fs-body);line-height:29px">Timeframe</h3>
+          <ul class="ds-list ds-list-bullet tight"><li>Lorem ipsum</li><li>Dolor sit amet</li><li>Elit sed do</li></ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="cs-meta-title" style="font-family:var(--font-body);font-size:var(--fs-body);line-height:29px">My Role</h3>
+          <ul class="ds-list ds-list-bullet tight"><li>Lorem ipsum</li><li>Dolor sit amet</li><li>Elit sed do</li></ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="cs-meta-title" style="font-family:var(--font-body);font-size:var(--fs-body);line-height:29px">Tools</h3>
+          <ul class="ds-list ds-list-bullet tight"><li>Lorem ipsum</li><li>Dolor sit amet</li><li>Elit sed do</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge and Goals -->
+    <section class="cs-section" aria-label="Challenge and goals">
+      <div class="row g-4">
+        <div class="col-md-6 text-block">
+          <h2 class="h4">Challenge</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h2 class="h4">Goals</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <ul class="ds-list ds-list-bullet"><li>Lorem ipsum dolor sit amet</li><li>Consectetur adipiscing elit</li><li>Sed do eiusmod tempor</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process and Methods -->
+    <section class="cs-section" aria-label="Process and methods">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h2 class="h4">Process</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <ol class="ds-list ds-list-numbered"><li>Empathize</li><li>Define</li><li>Ideate</li><li>Prototype</li><li>Test</li></ol>
+        </div>
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h2 class="h4">Methods</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <ol class="ds-list ds-list-numbered"><li>Lorem ipsum dolor sit amet</li><li>Consectetur adipiscing elit</li><li>Sed do eiusmod tempor</li><li>Ut labore et dolore magna</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="cs-section" aria-labelledby="research-title">
+      <div class="text-block mb-4">
+        <h2 id="research-title">Research</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-5 text-block">
+          <h3>Preliminary Research 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+        <div class="col-md-6 col-lg-7">
+          <figure class="ds-figure"><div class="ds-figure-placeholder" role="img" aria-label="Image placeholder">Image</div><figcaption>Image caption</figcaption></figure>
+        </div>
+      </div>
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-7 order-2 order-md-1">
+          <figure class="ds-figure"><div class="ds-figure-placeholder" role="img" aria-label="Image placeholder">Image</div><figcaption>Image caption</figcaption></figure>
+        </div>
+        <div class="col-md-6 col-lg-5 text-block order-1 order-md-2">
+          <h3>Preliminary Research 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+      </div>
+      <div class="text-block mb-4">
+        <h3>Literature Review</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <blockquote class="ds-blockquote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p><footer>Lorem Ipsum, 2026</footer></blockquote>
+        </div>
+        <div class="col-md-6">
+          <blockquote class="ds-blockquote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p><footer>Lorem Ipsum, 2026</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interviews -->
+    <section class="cs-section" aria-labelledby="interviews-title">
+      <div class="text-block mb-4">
+        <h2 id="interviews-title">Interviews</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h3 class="h4">Key Questions</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <ul class="ds-list ds-list-bullet"><li>Lorem ipsum dolor sit amet</li><li>Consectetur adipiscing elit</li><li>Sed do eiusmod tempor</li></ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h3 class="h4">Findings</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <ul class="ds-list ds-list-bullet"><li>Lorem ipsum dolor sit amet</li><li>Consectetur adipiscing elit</li><li>Sed do eiusmod tempor</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Low-Fidelity Prototype -->
+    <section class="cs-section" aria-labelledby="lofi-title">
+      <div class="text-block mb-4">
+        <h2 id="lofi-title">Low-Fidelity Prototype</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4"><figure class="ds-figure"><div class="ds-figure-placeholder" role="img" aria-label="Image placeholder">Image</div><figcaption>Image caption</figcaption></figure></div>
+        <div class="col-md-4"><figure class="ds-figure"><div class="ds-figure-placeholder" role="img" aria-label="Image placeholder">Image</div><figcaption>Image caption</figcaption></figure></div>
+        <div class="col-md-4"><figure class="ds-figure"><div class="ds-figure-placeholder" role="img" aria-label="Image placeholder">Image</div><figcaption>Image caption</figcaption></figure></div>
+      </div>
+    </section>
+
+    <!-- Low Fidelity Usability Testing -->
+    <section class="cs-section" aria-labelledby="lofi-testing-title">
+      <div class="text-block mb-4">
+        <h2 id="lofi-testing-title">Low Fidelity Usability Testing</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Scenarios</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Metrics Tracked</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Success Criteria</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h4 mb-4">Results</h3>
+          <ol class="ds-list ds-list-numbered tight"><li>Lorem ipsum 92%</li><li>Lorem ipsum 78%</li><li>Lorem ipsum 64%</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before and After -->
+    <section class="cs-section" aria-labelledby="before-after-title">
+      <div class="text-block mb-4">
+        <h2 id="before-after-title">Before and After</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h3 class="h4">Before</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-xl-4"><figure class="ds-figure ds-figure-phone"><img src="../images/figma/lofi-login.jpg" width="603" height="1311" alt="Low-fidelity welcome screen with a placeholder logo, black Get Started button and sign-in link" loading="lazy"><figcaption>Figure caption</figcaption></figure></div>
+            <div class="col-6 col-xl-4"><figure class="ds-figure ds-figure-phone"><img src="../images/figma/lofi-name.jpg" width="603" height="1311" alt="Low-fidelity screen asking “What's your name?” with first and last name fields" loading="lazy"><figcaption>Figure caption</figcaption></figure></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-block mb-4">
+            <h3 class="h4">After</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-xl-4"><figure class="ds-figure ds-figure-phone"><img src="../images/figma/hifi-login.jpg" width="603" height="1311" alt="High-fidelity welcome screen with the pink-to-purple Mosaic wordmark and a purple Get Started button" loading="lazy"><figcaption>Figure caption</figcaption></figure></div>
+            <div class="col-6 col-xl-4"><figure class="ds-figure ds-figure-phone"><img src="../images/figma/hifi-name.jpg" width="603" height="1311" alt="High-fidelity name screen with a purple Continue button" loading="lazy"><figcaption>Figure caption</figcaption></figure></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High Fidelity Usability Testing -->
+    <section class="cs-section" aria-labelledby="hifi-testing-title">
+      <div class="text-block mb-4">
+        <h2 id="hifi-testing-title">High Fidelity Usability Testing</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Scenarios</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Metrics Tracked</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6 text-block">
+          <h3 class="h4">Success Criteria</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h4 mb-4">Results</h3>
+          <ol class="ds-list ds-list-numbered tight"><li>Lorem ipsum 92%</li><li>Lorem ipsum 78%</li><li>Lorem ipsum 64%</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prototype -->
+    <section class="cs-section" aria-labelledby="prototype-title">
+      <div class="text-block mb-4">
+        <h2 id="prototype-title">Prototype</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <figure class="ds-figure mb-4"><div class="ds-figure-placeholder ratio-video" role="img" aria-label="Video walkthrough placeholder">Video walkthrough</div><figcaption>Prototype video walkthrough</figcaption></figure>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn-ds btn-ds-primary">View Final Prototype <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></button>
+      </div>
+    </section>
+
+    <!-- Future Impact -->
+    <section class="cs-section" aria-labelledby="impact-title">
+      <div class="text-block mb-4">
+        <h2 id="impact-title" class="h4">Future Impact</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      </div>
+      <ul class="ds-list ds-list-bullet mb-5">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+        <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</li>
+      </ul>
+      <button type="button" class="btn-ds btn-ds-secondary">Back to Projects</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container-fluid cs-container">
+      <p>Copyright &copy; Braeden Huff | 2026</p>
+      <p><a href="https://www.linkedin.com/in/braeden-huff" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/carousel.js"></script>
+</body>
+</html>
